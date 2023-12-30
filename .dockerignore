@@ -1,0 +1,15 @@
+Dockerfile
+docker-compose.yml
+.dockerignore
+.git
+.gitignore
+.gitattributes
+README.md
+.npmrc
+.prettierrc
+.eslintrc.cjs
+.svelte-kit
+node_modules
+build
+package
+**/.env

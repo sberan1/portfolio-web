@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  sveltekit:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "4321:5173"
+    volumes:
+      - .:/usr/src/app
