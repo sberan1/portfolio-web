@@ -11,7 +11,7 @@ COPY package*.json ./
 RUN npm install
 
 # Copy the current directory contents into the container at /usr/src/app
-COPY . .
+COPY . ./
 
 # Build the SvelteKit app
 RUN npm run build
