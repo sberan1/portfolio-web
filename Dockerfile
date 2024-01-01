@@ -5,7 +5,7 @@ RUN mkdir /app && mkdir /app/data
 COPY . /app
 
 RUN cd /app && yarn install && \
-  echo "DATABASE_URL=file:./dev.db" > /app/.env && \
+  echo "DB_PATH=/app/data/dev.db" > /app/.env && \
   yarn build
 
 
