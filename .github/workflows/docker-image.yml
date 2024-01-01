@@ -51,4 +51,4 @@ jobs:
             docker pull localhost:32844/portfolio:latest
             docker stop portfolio
             docker rm portfolio
-            docker run -d --name portfolio -p 4250:4250 registry.sberan.dev/portfolio:latest --env-file .env
+            docker run -d --name portfolio -p 4250:4250 registry.sberan.dev/portfolio:latest --env DATABASE_URL="${{ secrets.DATABASE_URL }}"
