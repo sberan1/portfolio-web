@@ -44,7 +44,7 @@ jobs:
           password: ${{ secrets.SERVER_PASSWORD }}
           script: |
             echo "${{ secrets.REGISTRY_PASSWORD }}" | docker login registry.sberan.dev -u "${{ secrets.REGISTRY_USERNAME }}" --password-stdin
-            echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" > .env
+            echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" > /app/.env
             docker pull localhost:32844/portfolio:latest
             docker stop portfolio
             docker rm portfolio
