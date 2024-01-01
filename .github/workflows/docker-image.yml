@@ -22,18 +22,13 @@ jobs:
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
 
-    - name: Create env file
-      run: echo "${{ secrets.ENV_FILE }}" > .env
-
     - name: Build and push Docker image
       uses: docker/build-push-action@v2
       with:
         context: .
         file: ./Dockerfile
         push: true
-        tags: registry.sberan.dev/portfolio:latest
-        build-args: |
-          DATABASE_URL=${{ secrets.DATABASE_URL }}
+        tags: registry.sberan.dev/portfolio:latests
 
 
   deploy:
@@ -41,6 +36,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Create env file
+        run: echo "${{ secrets.ENV_FILE }}" > .env
+
+
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@master
         with:
@@ -52,4 +51,4 @@ jobs:
             docker pull localhost:32844/portfolio:latest
             docker stop portfolio
             docker rm portfolio
-            docker run -d --name portfolio -p 4250:4250 registry.sberan.dev/portfolio:latest
+            docker run -d --name portfolio -p 4250:4250 registry.sberan.dev/portfolio:latest --env-file .env
