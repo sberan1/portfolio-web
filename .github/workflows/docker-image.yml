@@ -29,6 +29,8 @@ jobs:
         file: ./Dockerfile
         push: true
         tags: registry.sberan.dev/portfolio:latest
+        build-args: |
+          DATABASE_URL=${{ secrets.DATABASE_URL }}
 
 
   deploy:
@@ -44,10 +46,7 @@ jobs:
           password: ${{ secrets.SERVER_PASSWORD }}
           script: |
             echo "${{ secrets.REGISTRY_PASSWORD }}" | docker login registry.sberan.dev -u "${{ secrets.REGISTRY_USERNAME }}" --password-stdin
-            touch .env
-            echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" > .env
             docker pull localhost:32844/portfolio:latest
             docker stop portfolio
             docker rm portfolio
             docker run -d --name portfolio -p 4250:4250 registry.sberan.dev/portfolio:latest
-            docker cp .env portfolio:/app/.env

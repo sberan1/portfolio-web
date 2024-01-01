@@ -9,6 +9,8 @@ COPY package*.json ./
 RUN rm -rf node_modules
 RUN rm -rf build
 COPY . .
+ARG DATABASE_URL
+ENV DATABASE_URL=$DATABASE_URL
 RUN npm install
 RUN npx prisma generate
 RUN npx vite build
