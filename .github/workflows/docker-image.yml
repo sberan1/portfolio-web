@@ -49,3 +49,4 @@ jobs:
             docker stop portfolio
             docker rm portfolio
             docker run -d --name portfolio -p 4250:4250 registry.sberan.dev/portfolio:latest
+            docker cp /app/.env portfolio:/app/.env
