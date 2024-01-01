@@ -15,4 +15,4 @@ RUN npx vite build
 
 EXPOSE 4250
 
-ENTRYPOINT ["npm", "run", "start"]
+ENTRYPOINT ["npx", "prisma", "migrate", "deploy", "&&", "npm", "run", "start"]
