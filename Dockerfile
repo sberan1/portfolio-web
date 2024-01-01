@@ -1,25 +1,18 @@
-FROM node:18-alpine AS builder
+FROM node:lts-slim
 
-RUN mkdir /app && mkdir /app/data
-
-COPY . /app
-
-RUN cd /app && yarn install && \
-  echo "DB_PATH=/app/data/dev.db" > /app/.env && \
-  yarn build
-
-
-FROM node:18-alpine
-
-RUN mkdir /app
-
-COPY --from=builder /app/build /app/build
-COPY --from=builder /app/package.json /app/yarn.lock /app/
-
-RUN cd /app && \
-  yarn install --production && \
-  yarn cache clean
+RUN apt-get update -y && apt-get install -y openssl
+ENV NODE_ENV=development
 
 WORKDIR /app
 
-CMD ["node", "build/index.js"]
+COPY package*.json ./
+RUN rm -rf node_modules
+RUN rm -rf build
+COPY . .
+RUN npm install
+RUN npx prisma generate
+RUN npx vite build
+
+EXPOSE 4250
+
+ENTRYPOINT ["npm", "run", "start"]
