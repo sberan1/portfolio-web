@@ -44,9 +44,10 @@ jobs:
           password: ${{ secrets.SERVER_PASSWORD }}
           script: |
             echo "${{ secrets.REGISTRY_PASSWORD }}" | docker login registry.sberan.dev -u "${{ secrets.REGISTRY_USERNAME }}" --password-stdin
-            echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" > /app/.env
+            touch .env
+            echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" > .env
             docker pull localhost:32844/portfolio:latest
             docker stop portfolio
             docker rm portfolio
             docker run -d --name portfolio -p 4250:4250 registry.sberan.dev/portfolio:latest
-            docker cp /app/.env portfolio:/app/.env
+            docker cp .env portfolio:/app/.env
