@@ -10,6 +10,7 @@ RUN rm -rf node_modules
 RUN rm -rf build
 COPY . .
 ARG DATABASE_URL
+RUN touch .env
 RUN echo "DATABASE_URL=$DATABASE_URL" > .env
 RUN npm install
 RUN npx prisma generate

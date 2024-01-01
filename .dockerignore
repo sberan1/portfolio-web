@@ -13,3 +13,4 @@ node_modules
 build
 package
 prisma/dev.db
+**/.env
