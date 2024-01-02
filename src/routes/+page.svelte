@@ -6,6 +6,10 @@ console.log(data);
 </script>
 
 
+<svelte:head>
+    <title>Štěpán Beran</title>
+</svelte:head>
+
 <h1 class="text-3xl font-bold underline">
     Hello {data.user.name}! <br>
     {data.user.positionName} <br>
