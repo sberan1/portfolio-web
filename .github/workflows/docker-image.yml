@@ -23,7 +23,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: registry.sberan.dev/portfolio:latests
+          tags: registry.sberan.dev/portfolio:latest
   deploy:
     needs: build
     runs-on: ubuntu-latest
@@ -35,8 +35,8 @@ jobs:
           username: ${{ secrets.SERVER_USERNAME }}
           password: ${{ secrets.SERVER_PASSWORD }}
           script: |
-            echo "${{ secrets.REGISTRY_PASSWORD }}" | docker login registry.sberan.dev -u "${{ secrets.REGISTRY_USERNAME }}" --password-stdin
-            docker pull localhost:32844/portfolio:latest
+            echo "${{ secrets.REGISTRY_PASSWORD }}" | docker login ${{ secrets.REGISTRY_LINK }} -u "${{ secrets.REGISTRY_USERNAME }}" --password-stdin
+            docker pull ${{ secrets.REGISTRY_LINK }}/portfolio:latest
             docker stop portfolio
             docker rm portfolio
-            docker run -d --name portfolio -p 4250:4250 -v /home/sberan/portfolio/data:/app/data --env DATABASE_URL="${{ secrets.DATABASE_URL }}" registry.sberan.dev/portfolio:latest
+            docker run -d --name portfolio -p 4250:4250 -v /home/sberan/portfolio/data:/app/data --env DATABASE_URL="${{ secrets.DATABASE_URL }}" ${{ secrets.REGISTRY_LINK }}/portfolio:latest
