@@ -33,14 +33,22 @@ model Project {
   updatedAt        DateTime @updatedAt
 }
 
+model SkillCategory {
+  id     Int     @id @default(autoincrement())
+  name   String
+  skills Skill[]
+}
+
 model Skill {
-  id        Int       @id @default(autoincrement())
-  name      String
-  knowledge Int
-  logo      String
-  projects  Project[]
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
+  id              Int            @id @default(autoincrement())
+  name            String         @unique
+  knowledge       Int
+  logo            String
+  projects        Project[]
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+  SkillCategory   SkillCategory? @relation(fields: [skillCategoryId], references: [id])
+  skillCategoryId Int?
 }
 
 model Link {
