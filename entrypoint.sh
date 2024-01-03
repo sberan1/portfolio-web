@@ -4,4 +4,4 @@ npm i
 # Run migrations
 npx prisma migrate deploy
 
-node dist/main.js
+npm run start
