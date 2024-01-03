@@ -15,4 +15,4 @@ RUN npx vite build
 
 EXPOSE 4250
 
-ENTRYPOINT ["npx", "prisma", "migrate", "deploy", "&&", "npm", "run", "start"]
+CMD [ "sh", "entrypoint.sh" ]
