@@ -23,3 +23,10 @@
   <input type="radio" name="rating-5" class="bg-warning mask mask-star-2 mask-half-1" disabled checked={rating === 4.5}/>
   <input type="radio" name="rating-5" class="bg-warning mask mask-star-2 mask-half-2" disabled checked={rating === 5}/>
 </div>
+
+
+<style>
+  *{
+      align-items: center;
+  }
+</style>

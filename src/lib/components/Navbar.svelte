@@ -2,7 +2,7 @@
 
 </script>
 
-<nav class="flex justify-center items-center bg-gray-900 p-5 sticky top-0">
+<nav class="flex justify-center items-center bg-gray-900 p-5 sticky top-0 z-10">
     <div class="flex space-x-8">
         <a class="text-gray-400 hover:text-white" href="#">
             Skills
