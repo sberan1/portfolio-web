@@ -7,7 +7,7 @@
 </script>
 
 
-<div class="education-item card border-accent-content border-2 bg-base-100 p-5 flex flex-col justify-center items-center">
+<div class="education-item mx-3 card border-accent-content border-2 bg-base-100 p-5 flex flex-col justify-center items-center carousel-item">
   <div class="avatar">
     <div class="w-24 rounded-full">
       <img src={logo} alt="logo of {title}"/>
