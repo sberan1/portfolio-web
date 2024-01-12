@@ -26,7 +26,7 @@ jobs:
           tags: ${{ secrets.REGISTRY_LINK }}/portfolio:latest
           build-args: |
             SUPABASE_URL=${{ secrets.SUPABASE_URL }}
-            DATABASE_URL=${{ secrets.DATABASE_URL }}
+            SUPABASE_KEY=${{ secrets.SUPABASE_KEY }}
   deploy:
     needs: build
     runs-on: ubuntu-latest
