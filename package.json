@@ -38,11 +38,24 @@
   },
   "type": "module",
   "dependencies": {
+    "@auth/core": "^0.20.0",
+    "@auth/sveltekit": "^0.5.2",
+    "@iconify-json/cib": "^1.1.8",
+    "@iconify/icons-cib": "^1.2.4",
+    "@iconify/svelte": "^3.1.6",
+    "@iconify/tools": "^4.0.0",
+    "@iconify/utils": "^2.1.14",
     "@prisma/client": "5.7.1",
+    "@supabase/auth-helpers-sveltekit": "^0.10.7",
+    "@supabase/supabase-js": "^2.39.2",
     "aos": "^2.3.4",
+    "bcrypt": "^5.1.1",
     "daisyui": "^4.4.24",
     "dotenv": "^16.3.1",
+    "js-cookie": "^3.0.5",
+    "jsonwebtoken": "^9.0.2",
     "prisma": "^5.7.1",
+    "theme-change": "^2.5.0",
     "wow.js": "^1.2.2"
   }
 }

@@ -5,8 +5,8 @@ import Education from "$lib/components/Education.svelte";
 import Experience from "$lib/components/Experience.svelte";
 import Project from "$lib/components/Project.svelte";
 export let data;
+console.log(data)
 </script>
-
 
 <svelte:head>
     <title>Štěpán Beran</title>
@@ -15,6 +15,7 @@ export let data;
 <div class="p-10">
 
 <Hero name={data.user.name} position={data.user.positionName} picture={data.user.picture}/>
+  <button class="btn-primary btn" formaction="?/logout">logout</button>
 <h2 class="text-3xl text-neutral mb-5">Skills</h2>
   <div class="skills flex-row flex-wrap justify-evenly flex">
     <Skill rating={5} />

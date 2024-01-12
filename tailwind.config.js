@@ -2,7 +2,12 @@
 export default {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
-		extend: {}
+		extend: {
+			colors: {
+				light: '#f5f5f5', // Light theme background color
+				dark: '#1f2937' // Dark theme background color
+			}
+		}
 	},
 	daisyui: {
 		themes: [
@@ -18,7 +23,8 @@ export default {
 					warning: '#FF9529',
 					error: '#dc2626'
 				}
-			}
+			},
+			'retro'
 		]
 	},
 	plugins: [require('daisyui')]

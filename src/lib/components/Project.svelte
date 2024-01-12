@@ -24,10 +24,10 @@ export let skills = [{
 
 <div class="education-item mx-3 card border-accent-content border-2 max-w-2xl bg-base-100 p-5 flex flex-col justify-center items-center carousel-item">
 <div class="flex flex-col justify-center items-center">
-  <h3 class="text-2xl font-semibold leading-none tracking-tight">{name}</h3>
-  <p class="text-sm text-muted-foreground">{shortDescription}</p>
+  <h3 class="text-2xl text-neutral font-semibold leading-none tracking-tight">{name}</h3>
+  <p class="text-sm text-muted-foreground text-neutral">{shortDescription}</p>
 </div>
-  <div class="w-auto bg-gray-700 h-fit rounded-lg flex flex-col align-baseline my-4">
+  <div class="w-auto bg-base-300 h-fit rounded-lg flex flex-col align-baseline my-4">
   <div class="flex items-center flex-row justify-center ">
   {#each skills as skill}
       {@html skill.logo}
@@ -35,7 +35,7 @@ export let skills = [{
   </div>
 <img src="{image}" alt="Project Image" class="rounded w-full aspect-[16/10] object-cover" />
   </div>
-  <p>{description}.</p>
+  <p class="text-neutral">{description}.</p>
   <div class="flex flex-row justify-evenly align-middle w-full mt-3">
 <button class="btn-primary btn" href="{githubLink}" rel="ugc">View on GitHub</button>
 <button class="btn-secondary btn" href="{githubLink}" rel="ugc">Read More</button>

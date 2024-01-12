@@ -1,4 +1,4 @@
-<footer class="mt-10 text-center text-gray-400 bg-gray-900 h-16">© 2023 Developer Name. All rights reserved.</footer>
+<footer class="mt-10 text-center text-neutral bg-base-300 h-16">© 2023 Developer Name. All rights reserved.</footer>
 
 
 <style>
