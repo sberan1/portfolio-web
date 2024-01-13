@@ -4,8 +4,20 @@ import Hero from "$lib/components/Hero.svelte";
 import Education from "$lib/components/Education.svelte";
 import Experience from "$lib/components/Experience.svelte";
 import Project from "$lib/components/Project.svelte";
+import { supabase } from '$lib/supabaseClient';
+import { onMount } from 'svelte';
+
+let post;
+let session;
 export let data;
-console.log(data)
+
+async function loadData() {
+  post = await supabase.from('User').select('*').limit(1).single();
+  session = await supabase.auth.getSession();
+}
+
+onMount(loadData);
+
 </script>
 
 <svelte:head>
@@ -14,9 +26,8 @@ console.log(data)
 
 <div class="p-10">
 
-<Hero name={data.user.name} position={data.user.positionName} picture={data.user.picture}/>
-  <button class="btn-primary btn" formaction="?/logout">logout</button>
-<h2 class="text-3xl text-neutral mb-5">Skills</h2>
+<Hero name={data.user.data.name} position={data.user.data.position_name} picture={data.user.data.picture}/>
+  <h2 class="text-3xl text-neutral mb-5" id="Skills">Skills</h2>
   <div class="skills flex-row flex-wrap justify-evenly flex">
     <Skill rating={5} />
     <Skill rating={5} />
@@ -49,7 +60,7 @@ console.log(data)
     <Skill rating={5} />
     <Skill rating={5} />
 </div>
-  <h2 class="text-3xl text-neutral mb-5 pt-4 ">Education</h2>
+  <h2 class="text-3xl text-neutral mb-5 pt-4" id="Education">Education</h2>
   <div class="education carousel w-auto">
     <Education/>
     <Education/>
@@ -57,7 +68,7 @@ console.log(data)
     <Education/>
     <Education/>
   </div>
-  <h2 class="text-3xl text-neutral mb-5 pt-4">Experience</h2>
+  <h2 class="text-3xl text-neutral mb-5 pt-4" id="Experience">Experience</h2>
   <div class="experience carousel w-auto">
     <Experience/>
     <Experience/>
@@ -65,7 +76,7 @@ console.log(data)
     <Experience/>
     <Experience/>
   </div>
-  <h2 class="text-3xl text-neutral mb-5 pt-4">Projects</h2>
+  <h2 class="text-3xl text-neutral mb-5 pt-4" id="Projects">Projects</h2>
   <div class="project carousel w-auto">
     <Project/>
     <Project/>

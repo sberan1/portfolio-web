@@ -36,7 +36,7 @@
     <div class="max-w-md">
       <div class="avatar">
         <div class="w-24 rounded-full">
-          <img src={picture} alt="avatar"/>
+          <img src="{picture}" alt="avatar"/>
         </div>
       </div>
       <h1 class="mt-4 text-4xl font-bold">{name}</h1>

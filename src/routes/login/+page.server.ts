@@ -1,7 +1,7 @@
 import type { Action } from '@sveltejs/kit';
 import { AuthApiError } from '@supabase/supabase-js';
 import { fail, redirect } from '@sveltejs/kit';
-import { supabase } from '$lib/server/supabaseClient';
+import { supabase } from '$lib/supabaseClient';
 import { dev } from '$app/environment';
 
 export const actions: Action = {
@@ -25,7 +25,7 @@ export const actions: Action = {
 				message: 'Server error. Try again later.'
 			});
 		}
-		cookies.set('acces_token', data?.session.access_token, {
+		cookies.set('access_token', data?.session.access_token, {
 			path: '/',
 			httpOnly: true,
 			sameSite: 'strict',

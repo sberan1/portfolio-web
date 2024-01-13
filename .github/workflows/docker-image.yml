@@ -25,8 +25,8 @@ jobs:
           push: true
           tags: ${{ secrets.REGISTRY_LINK }}/portfolio:latest
           build-args: |
-            SUPABASE_URL=${{ secrets.SUPABASE_URL }}
-            SUPABASE_KEY=${{ secrets.SUPABASE_KEY }}
+            PUBLIC_SUPABASE_URL=${{ secrets.PUBLIC_SUPABASE_URL }}
+            PUBLIC_SUPABASE_ANON_KEY=${{ secrets.PUBLIC_SUPABASE_ANON_KEY }}
   deploy:
     needs: build
     runs-on: ubuntu-latest
