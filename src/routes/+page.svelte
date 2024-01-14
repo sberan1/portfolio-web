@@ -14,7 +14,7 @@ export let data;
 
 <div class="p-10">
 
-<Hero name={data.user.data.name} position={data.user.data.position_name} picture={data.user.data.picture}/>
+<Hero name={data.user.data.name} position={data.user.data.position_name} picture={data.user.data.picture} links={data.links}/>
   <h2 class="text-3xl text-neutral mb-5" id="Skills">Skills</h2>
   <div class="skills flex-row flex-wrap justify-evenly flex">
     {#each data.skills as skill}
@@ -23,11 +23,9 @@ export let data;
 </div>
   <h2 class="text-3xl text-neutral mb-5 pt-4" id="Education">Education</h2>
   <div class="education carousel w-auto">
-    <Education/>
-    <Education/>
-    <Education/>
-    <Education/>
-    <Education/>
+    {#each data.education as education}
+      <Education startDate={education.start_date} endDate={education.end_date} logo={education.logo} description={education.description} title={education.name}/>
+    {/each}
   </div>
   <h2 class="text-3xl text-neutral mb-5 pt-4" id="Experience">Experience</h2>
   <div class="experience carousel w-auto">

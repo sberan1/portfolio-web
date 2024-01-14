@@ -7,10 +7,10 @@ Everything you need to build a Svelte project, powered by [`create-svelte`](http
 If you're seeing this, you've probably already done this step. Congrats!
 
 ```bash
-# create a new project in the current directory
+# create a new projects in the current directory
 npm create svelte@latest
 
-# create a new project in my-app
+# create a new projects in my-app
 npm create svelte@latest my-app
 ```
 

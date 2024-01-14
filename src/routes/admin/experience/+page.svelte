@@ -1,11 +1,10 @@
 <script lang="ts">
-  import EducationForm from "$lib/components/EducationForm.svelte";
+  import ExperienceForm from "$lib/components/ExperienceForm.svelte";
 
   export let data;
-  console.log(data);
 
 </script>
 
-<EducationForm data={data.education} />
+<ExperienceForm data={data.education} />
 
 

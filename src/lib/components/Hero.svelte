@@ -1,4 +1,6 @@
 <script lang="ts">
+  import Icon from "@iconify/svelte";
+
   export let name: string;
   export let picture: string;
   export let position: string;
@@ -44,7 +46,7 @@
       <div class="bg-base-100/80 border-accent-content rounded-full border-2 p-2 mt-6 space-x-4 flex flex-row flex-wrap justify-center">
         {#each links as link}
        <a href={link.url}>
-         <img src={link.logo} alt={link.name} class="w-8 h-8 mx-1">
+         <Icon icon={link.logo} class="w-10 h-10"/>
        </a>
           {/each}
       </div>
