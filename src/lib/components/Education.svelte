@@ -7,13 +7,13 @@
 </script>
 
 
-<div class="education-item mx-3 card border-accent-content border-2 bg-base-100 p-5 flex flex-col justify-center items-center carousel-item">
+<div class="education-item mx-3 card border-accent-content border-2 bg-base-100 p-5 flex flex-col justify-center items-center carousel-item min-w-96 ">
   <div class="avatar">
     <div class="w-24 rounded-full">
       <img src={logo} alt="logo of {title}"/>
     </div>
   </div>
   <h3 class="text-2xl font-bold text-neutral my-2">{title}</h3>
-  <p class="text-neutral">{startDate} - {endDate}</p>
+  <p class="text-neutral">{startDate} - {endDate ? endDate : 'Present'}</p>
   <p class="text-neutral">{description}</p>
 </div>

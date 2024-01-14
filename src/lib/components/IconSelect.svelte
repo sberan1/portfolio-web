@@ -15,7 +15,7 @@
 
 <div class="collapse bg-base-200">
   <input type="checkbox" id="modalCheckbox" />
-  <div class="collapse-title text-xl font-medium">
+  <div class="collapse-title text-xl font-medium text-neutral">
     Choose an icon
   </div>
   <div class="collapse-content">

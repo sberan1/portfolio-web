@@ -3,9 +3,9 @@
   import { themeChange } from 'theme-change'
 
   export let  skills_link = "/#Skills";
-  export let  education_link = "/";
-  export let  experience_link = "/";
-  export let projects_link = "/";
+  export let  education_link = "/#Education";
+  export let  experience_link = "/#Experience";
+  export let projects_link = "/#Projects";
 
 
   let isDarkMode = false;
@@ -24,11 +24,11 @@
         <a class="text-neutral hover:text-white" href={skills_link}>
             Skills
         </a>
+      <a class="text-neutral hover:text-white" href={education_link}>
+        Education
+      </a>
         <a class="text-neutral hover:text-white" href={experience_link}>
             Experience
-        </a>
-        <a class="text-neutral hover:text-white" href={education_link}>
-            Education
         </a>
         <a class="text-neutral hover:text-white" href={projects_link}>
             Projects

@@ -35,12 +35,12 @@
   <div class="hero-content text-center">
     <div class="max-w-md">
       <div class="avatar">
-        <div class="w-24 rounded-full">
+        <div class="w-40 rounded-full">
           <img src="{picture}" alt="avatar"/>
         </div>
       </div>
-      <h1 class="mt-4 text-4xl font-bold">{name}</h1>
-      <p class="mt-2 text-xl text-gray-400">{position}</p>
+      <h1 class="mt-4 text-4xl font-bold text-neutral">{name}</h1>
+      <p class="mt-2 text-xl text-neutral" >{position}</p>
       <div class="bg-base-100/80 border-accent-content rounded-full border-2 p-2 mt-6 space-x-4 flex flex-row flex-wrap justify-center">
         {#each links as link}
        <a href={link.url}>

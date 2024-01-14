@@ -25,10 +25,10 @@
     <a href="/admin" class="text-neutral block py-2 px-3 rounded hover:bg-accent">Dashboard</a>
     <a href="/admin/skills" class="text-neutral block py-2 px-3 rounded hover:bg-accent">Skills</a>
     <a href="/admin/links" class="block text-neutral py-2 px-3 rounded hover:bg-accent">Links</a>
-    <a href="#section3" class="block text-neutral py-2 px-3 rounded hover:bg-accent">Education</a>
-    <a href="#section4" class="block py-2 px-3 text-neutral rounded hover:bg-accent">Experience</a>
-    <a href="#section4" class="block py-2 px-3 rounded text-neutral hover:bg-accent ">Projects</a>
-    <button on:click|preventDefault={logout} class="btn-error btn">Log out</button>
+    <a href="/admin/education" class="block text-neutral py-2 px-3 rounded hover:bg-accent">Education</a>
+    <a href="/admin/experience" class="block py-2 px-3 text-neutral rounded hover:bg-accent">Experience</a>
+    <a href="/admin/projects" class="block py-2 px-3 rounded text-neutral hover:bg-accent ">Projects</a>
+    <button on:click|preventDefault={logout} class="btn-error btn mt-4">Log out</button>
   </div>
   <div class="m-10 top-0 grow max-w-6xl">
     <slot />
