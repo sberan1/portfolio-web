@@ -1,5 +1,5 @@
 <script lang="ts">
-  import ExperienceForm from "$lib/components/ExperienceForm.svelte";
+  import ExperienceForm from "$lib/components/Forms/ExperienceForm.svelte";
 
   export let data;
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import LinksForm from "$lib/components/LinksForm.svelte";
+  import LinksForm from "$lib/components/Forms/LinksForm.svelte";
 
   export let data;
   console.log(data);

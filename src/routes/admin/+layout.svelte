@@ -19,7 +19,9 @@
   onMount(checkUser)
 
 </script>
-
+<svelte:head>
+  <title>Admin Dashboard</title>
+</svelte:head>
 <div class="flex">
   <div class="sidebar bg-secondary text-black h-fit sticky w-64 p-5 top-20 z-10">
     <a href="/admin" class="text-black block py-2 px-3 rounded hover:bg-accent">Dashboard</a>

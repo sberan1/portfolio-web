@@ -1,5 +1,5 @@
 <script lang="ts">
-  import AboutMeForm from "$lib/components/AboutMeForm.svelte";
+  import AboutMeForm from "$lib/components/Forms/AboutMeForm.svelte";
 
   export let data;
 
