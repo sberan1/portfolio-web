@@ -7,7 +7,7 @@
   let pic = "https://149909199.v2.pressablecdn.com/wp-content/uploads/2015/09/DT39-F.jpg";
   let ExperienceName = "";
   let ExperienceDescription = "";
-  let ExperienceTitle = "";
+  let ExperiencePosition = "";
   let startYear = "";
   let endYear = "";
   let uploadedFilePath = "";
@@ -41,7 +41,7 @@
         {
           name: ExperienceName,
           description: ExperienceDescription,
-          degree: ExperienceTitle,
+          position: ExperiencePosition,
           start_date: startYear,
           end_date: endYear,
           logo: uploadedFilePath
@@ -57,7 +57,7 @@
         {
           name: ExperienceName,
           description: ExperienceDescription,
-          degree: ExperienceTitle,
+          position: ExperiencePosition,
           start_date: startYear,
           end_date: endYear,
           logo: uploadedFilePath ? uploadedFilePath : pic
@@ -66,7 +66,7 @@
       editId = undefined;
       ExperienceName = "";
       ExperienceDescription = "";
-      ExperienceTitle = "";
+      ExperiencePosition = "";
       startYear = "";
       endYear = "";
       pic = "https://149909199.v2.pressablecdn.com/wp-content/uploads/2015/09/DT39-F.jpg";
@@ -87,7 +87,7 @@
     let Experience = temp.data;
     ExperienceName = Experience.name;
     ExperienceDescription = Experience.description;
-    ExperienceTitle = Experience.degree;
+    ExperiencePosition = Experience.position;
     startYear = Experience.start_date;
     endYear = Experience.end_date;
     pic = Experience.logo;
@@ -117,13 +117,13 @@
       <div class="label">
         <span class="label-text">Description of the Experience?</span>
       </div>
-      <input type="text" placeholder="Description of the Experience" class="input input-accent input-bordered w-full" bind:value={ExperienceDescription} />
+      <input type="text" placeholder="Description of the work Experience" class="input input-accent input-bordered w-full" bind:value={ExperienceDescription} />
     </label>
     <label class="form-control w-full  my-4">
       <div class="label">
-        <span class="label-text">Obtained title?</span>
+        <span class="label-text">What was your position?</span>
       </div>
-      <input type="text" placeholder="Obtained title" class="input input-accent input-bordered w-full" bind:value={ExperienceTitle} />
+      <input type="text" placeholder="Your Position" class="input input-accent input-bordered w-full" bind:value={ExperiencePosition} />
     </label>
     <div class="flex flex-row">
       <label class="form-control w-full  my-4 mr-5">
@@ -140,5 +140,20 @@
       </label>
     </div>
     <button class="btn btn-accent my-4" on:click|preventDefault={saveExperience}>Save</button>
+  </div>
+</div>
+<div class="card bg-base-300 mt-10">
+  <div class="card-header">
+    <h1 class="card-title m-5 text-5xl text-neutral">All Experience</h1>
+  </div>
+  <!-- /.card-header -->
+  <div class="card-body">
+    {#each data as experience}
+      <div class="flex-row flex justify-center items-center">
+        <button class="btn btn-success my-4" on:click={() => (editExperience(experience.id))}>Edit</button>
+        <Experience startDate={experience.start_date} endDate={experience.end_date} logo={experience.logo} position={experience.position} description={experience.description} name={experience.name}/>
+        <button class="btn btn-error my-4 h-max" on:click={() => (deleteExperience(experience.id))}>Delete</button>
+      </div>
+    {/each}
   </div>
 </div>

@@ -1,8 +1,8 @@
 import { supabase } from '$lib/supabaseClient';
 
 export async function load() {
-	const { data } = await supabase.from('Education').select('*');
+	const { data } = await supabase.from('Experience').select('*');
 	return {
-		education: data
+		experience: data
 	};
 }

@@ -29,11 +29,9 @@ export let data;
   </div>
   <h2 class="text-3xl text-neutral mb-5 pt-4" id="Experience">Experience</h2>
   <div class="experience carousel w-auto">
-    <Experience/>
-    <Experience/>
-    <Experience/>
-    <Experience/>
-    <Experience/>
+    {#each data.experience as experience}
+      <Experience startDate={experience.start_date} endDate={experience.end_date} logo={experience.logo} position={experience.position} description={experience.description} name={experience.name}/>
+    {/each}
   </div>
   <h2 class="text-3xl text-neutral mb-5 pt-4" id="Projects">Projects</h2>
   <div class="project carousel w-auto">

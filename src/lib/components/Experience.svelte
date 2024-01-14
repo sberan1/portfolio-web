@@ -16,8 +16,8 @@
       <img src={logo} alt="logo of {name}"/>
     </div>
   </div>
-  <p class="text-3xl font-bold text-neutral">{position}</p>
+  <p class="text-3xl font-bold text-neutral mt-4">{position}</p>
   <h3 class="text-xl text-neutral my-2">{name}</h3>
-  <p class="text-neutral mb-3">{startDate} - {endDate}</p>
+  <p class="text-neutral mb-3">{startDate} - {endDate ? endDate : 'Present'}</p>
   <p class="text-neutral">{description}</p>
 </div>

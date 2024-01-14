@@ -5,6 +5,6 @@
 
 </script>
 
-<ExperienceForm data={data.education} />
+<ExperienceForm data={data.experience} />
 
 
