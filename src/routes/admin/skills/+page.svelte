@@ -1,11 +1,12 @@
 <script lang="ts">
-  import AboutMeForm from "$lib/components/AboutMeForm.svelte";
+  import NewSkillForm from "$lib/components/NewSkillForm.svelte";
 
   export let data;
+  console.log(data);
 
 </script>
 
-<AboutMeForm user={data.user.data}/>
+<NewSkillForm rawSkills={data.skills.data}/>
 
 
 

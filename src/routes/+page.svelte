@@ -4,19 +4,7 @@ import Hero from "$lib/components/Hero.svelte";
 import Education from "$lib/components/Education.svelte";
 import Experience from "$lib/components/Experience.svelte";
 import Project from "$lib/components/Project.svelte";
-import { supabase } from '$lib/supabaseClient';
-import { onMount } from 'svelte';
-
-let post;
-let session;
 export let data;
-
-async function loadData() {
-  post = await supabase.from('User').select('*').limit(1).single();
-  session = await supabase.auth.getSession();
-}
-
-onMount(loadData);
 
 </script>
 
@@ -29,36 +17,9 @@ onMount(loadData);
 <Hero name={data.user.data.name} position={data.user.data.position_name} picture={data.user.data.picture}/>
   <h2 class="text-3xl text-neutral mb-5" id="Skills">Skills</h2>
   <div class="skills flex-row flex-wrap justify-evenly flex">
-    <Skill rating={5} />
-    <Skill rating={5} />
-    <Skill rating={5} />
-    <Skill rating={5} />
-    <Skill rating={5} />
-    <Skill rating={5} />
-    <Skill rating={5} />
-    <Skill rating={5} />
-    <Skill rating={5} />
-    <Skill rating={5} />
-    <Skill rating={5} />
-    <Skill rating={5} />
-    <Skill rating={5} />
-    <Skill rating={5} />
-    <Skill rating={5} />
-    <Skill rating={5} />
-    <Skill rating={5} />
-    <Skill rating={5} />
-    <Skill rating={5} />
-    <Skill rating={5} />
-    <Skill rating={5} />
-    <Skill rating={5} />
-    <Skill rating={5} />
-    <Skill rating={5} />
-    <Skill rating={5} />
-    <Skill rating={5} />
-    <Skill rating={5} />
-    <Skill rating={5} />
-    <Skill rating={5} />
-    <Skill rating={5} />
+    {#each data.skills as skill}
+      <Skill logo={skill.logo} rating={Number(skill.knowledge)}/>
+    {/each}
 </div>
   <h2 class="text-3xl text-neutral mb-5 pt-4" id="Education">Education</h2>
   <div class="education carousel w-auto">

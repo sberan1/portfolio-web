@@ -67,23 +67,23 @@
       </label>
       <input type="file" id="profilePicture" class="hidden" bind:files={selectedFile}>
     </div>
-    <label class="form-control w-full max-w-xs">
+    <label class="form-control w-full ">
       <div class="label">
         <span class="label-text">What is your name?</span>
       </div>
-      <input type="text" placeholder="John Doe" class="input input-accent input-bordered w-full max-w-xs" bind:value={user.name}/>
+      <input type="text" placeholder="John Doe" class="input input-accent input-bordered w-full " bind:value={user.name}/>
     </label>
-    <label class="form-control w-full max-w-xs">
+    <label class="form-control w-full ">
       <div class="label">
         <span class="label-text">What is your position?</span>
       </div>
-      <input type="text" placeholder="Your Position" class="input input-accent input-bordered w-full max-w-xs" bind:value={user.position_name} />
+      <input type="text" placeholder="Your Position" class="input input-accent input-bordered w-full" bind:value={user.position_name} />
     </label>
-    <label class="form-control w-full max-w-xs">
+    <label class="form-control w-full ">
       <div class="label">
         <span class="label-text">What is your email?</span>
       </div>
-      <input type="text" placeholder="Your Position" class="input input-accent input-bordered w-full max-w-xs" bind:value={user.email} />
+      <input type="text" placeholder="Your Position" class="input input-accent input-bordered w-full" bind:value={user.email} />
     </label>
     <label class="form-control">
       <div class="label">

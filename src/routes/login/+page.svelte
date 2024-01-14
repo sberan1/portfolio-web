@@ -1,6 +1,4 @@
 <script lang="ts">
-import  Icon  from '@iconify/svelte';
-import { icons } from '@iconify-json/cib';
 import {supabase} from "$lib/supabaseClient";
 import { goto } from "$app/navigation";
 
@@ -19,9 +17,6 @@ async function handleSubmit() {
     await goto('/admin');
   }
 }
-export let data;
-// Log the icon names
-const iconArray = Object.entries(icons.icons).map(([name, body]) => ({ name, body }));
 
 </script>
 
@@ -33,9 +28,4 @@ const iconArray = Object.entries(icons.icons).map(([name, body]) => ({ name, bod
       <button class="btn-primary btn"> Login </button>
     </form>
   </div>
-  <!-- {#each iconArray as icon (icon.name)}
-    <div>
-      <h2>{icon.name}</h2>
-      <svg class="fill-neutral h-6 w-6">{@html icon.body.body}</svg>
-    </div>
-  {/each} -->
+
