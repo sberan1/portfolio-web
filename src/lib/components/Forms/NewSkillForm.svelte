@@ -1,6 +1,5 @@
 <script lang="ts">
   import  Icon  from '@iconify/svelte';
-  import { icons } from "@iconify-json/cib";
   import { supabase } from "$lib/supabaseClient";
   import  Skill from "$lib/components/Skill.svelte";
   import IconSelect from "$lib/components/IconSelect.svelte";

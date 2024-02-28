@@ -1,13 +1,29 @@
 <script lang="ts">
-
-  import { icons } from "@iconify-json/cib";
-
-  export let selectedIcon = "cib:figma";
+  import { icons } from "@iconify-json/devicon";
+  import { getIconData, iconToSVG, iconToHTML, replaceIDs } from "@iconify/utils";
+  export let selectedIcon = "devicon:java";
 
   const iconArray = Object.entries(icons.icons).map(([name, body]) => ({ name, body }));
 
+  let parsedIcons = [];
+
+  for (let icon of iconArray){
+    const iconData = getIconData(icons, icon.name)
+    if (!iconData) {
+      throw new Error(`Icon is missing`);
+    }
+    const renderData = iconToSVG(iconData, {
+      // Setting only height will also remove width
+      height: 'unset',
+    });
+
+    const svg = iconToHTML(replaceIDs(renderData.body), renderData.attributes);
+
+    console.log()
+    parsedIcons.push({name: icon.name, body: svg});
+  }
   function handleIconClick(icon) {
-    selectedIcon = "cib:"+ icon.name;
+    selectedIcon = "devicon:"+ icon.name;
     document.getElementById('modalCheckbox').click();
   }
 
@@ -20,9 +36,9 @@
   </div>
   <div class="collapse-content">
     <div class="flex flex-row flex-wrap">
-      {#each iconArray as icon (icon.name)}
-        <div title={icon.name}>
-          <svg class="fill-neutral h-10 w-10 {selectedIcon === icon ? 'selected' : ''}" id="{icon.name}" on:click|preventDefault={() => handleIconClick(icon)} on:keydown|preventDefault={(e) => e.key === 'Enter' && handleIconClick(icon)} tabindex="0" role="button">{@html icon.body.body}</svg>
+      {#each parsedIcons as icon (icon.name)}
+        <div class="" title={icon.name}>
+          <svg class="fill-neutral w-10 h-10 m-1 {selectedIcon === icon ? 'selected' : ''}" id="{icon.name}" on:click|preventDefault={() => handleIconClick(icon)} on:keydown|preventDefault={(e) => e.key === 'Enter' && handleIconClick(icon)} tabindex="0" role="button">{@html icon.body}</svg>
         </div>
       {/each}
     </div>
